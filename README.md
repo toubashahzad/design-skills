@@ -9,6 +9,17 @@ designs a thing and then ships its front end.
 | [`mock-it`](.agents/skills/mock-it/SKILL.md) | Render 2–4 labelled design variants inline in the chat, in the project's real tokens, then ask which direction to take. |
 | [`explore`](.agents/skills/explore/SKILL.md) | An idea lane that runs alongside a `/list-it` list. Produces options and trade-offs; nothing is built or listed until you say so. |
 
+One more, kept here as a worked example rather than as something to install:
+
+| skill | what it does |
+|---|---|
+| [`case-study`](.agents/skills/case-study/SKILL.md) | Everything the portfolio's case-study pages need: the section model, the header's caps against the window, the image conventions, and a script that reports what a study is made of and which of its pictures are missing. |
+
+It is written against one codebase and only works there — its script imports
+that repository's TypeScript by path. It is in this repository because it shows
+what the project-specific kind of skill looks like, which is the kind most
+worth writing and the hardest to picture from a generic example.
+
 Each is invoked two ways: automatically, when what you are doing matches the
 skill's `description`, or by hand as `/list-it`, `/mock-it`, `/explore`.
 

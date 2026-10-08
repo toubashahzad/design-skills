@@ -277,6 +277,50 @@
         font-size: 0.8125rem;
       }
 
+      /*
+        The fourth skill is written against one codebase and does nothing in
+        any other, so it gets no install command — a copy button on it would
+        be an invitation to break your own repository. A link to the source
+        instead: it is here to be read, not run.
+      */
+      .pill.muted {
+        color: var(--muted);
+        border-color: var(--border-strong);
+        background: transparent;
+      }
+      .example {
+        border-top: 1px solid var(--border);
+        padding-top: clamp(2rem, 5vh, 3rem);
+        margin-top: clamp(2rem, 5vh, 3rem);
+      }
+      .example > p:first-child {
+        margin: 0 0 1.75rem;
+        font-size: 0.9375rem;
+        color: var(--muted);
+        max-width: 62ch;
+      }
+      .example .skill:last-of-type {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      .source {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: start;
+        border: 1px solid var(--border-strong);
+        border-radius: 10px;
+        padding: 0.625rem 1rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--heading);
+        text-decoration: none;
+        transition: border-color 0.18s ease;
+      }
+      .source:hover {
+        border-color: var(--violet);
+      }
+
       /* ---------------------------------------------------------- how --- */
       .how {
         border-top: 1px solid var(--border);
@@ -501,6 +545,40 @@
               </button>
             </div>
           </article>
+
+          <div class="example">
+            <p>
+              One more, kept here as a worked example rather than as something
+              to install. Most of what a skill is worth saying is specific to
+              one codebase, and that is the kind hardest to picture from a
+              generic one.
+            </p>
+
+            <article class="skill">
+              <div class="skill-head">
+                <span class="skill-name">/case-study</span>
+                <span class="pill muted">Project-specific</span>
+              </div>
+              <p>
+                Everything a portfolio's case-study pages need: the section
+                model, the four caps that keep a header above the fold, the
+                image conventions that need no code, and a script that reports
+                what a study is currently made of and which of its pictures
+                have no file — a thing no build will ever tell you, because a
+                missing picture renders an empty frame and passes.
+              </p>
+              <p class="what">
+                Written against one repository and only works there: its script
+                imports that project's TypeScript by path. Read it for the
+                shape, not to run it.
+              </p>
+              <a
+                class="source"
+                href="https://github.com/toubashahzad/design-skills/blob/main/.agents/skills/case-study/SKILL.md"
+                >Read the source</a
+              >
+            </article>
+          </div>
         </div>
       </section>
 
