@@ -435,20 +435,22 @@
         <p class="eyebrow">Claude Code · Skills</p>
         <h1>Your process, <span class="grad">in Claude&nbsp;Code</span>.</h1>
         <p class="lede">
-          Three small skills that make Claude collect before it builds, explore
-          without committing, and show you options instead of describing them.
-          Drop them into any repository; they work from the first message.
+          Four small skills that make Claude collect before it builds, explore
+          without committing, show you options instead of describing them, and
+          never report a number it cannot show you the evidence for. Drop them
+          into any repository; they work from the first message.
         </p>
 
         <div class="install">
           <div class="install-label">
-            <p>Install all three</p>
+            <p>Install all four</p>
             <p>Run it in your project root</p>
           </div>
           <div class="cmd">
             <pre id="cmd-all"><span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/list-it .claude/skills/list-it &amp;&amp;
 <span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/mock-it .claude/skills/mock-it &amp;&amp;
-<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/explore .claude/skills/explore</pre>
+<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/explore .claude/skills/explore &amp;&amp;
+<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/synthesis .claude/skills/synthesis</pre>
             <button class="copy" type="button" data-copy="cmd-all">
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <rect
@@ -541,6 +543,30 @@
             <div class="cmd">
               <pre id="cmd-explore"><span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/explore .claude/skills/explore</pre>
               <button class="copy" type="button" data-copy="cmd-explore">
+                <span class="copy-text">Copy</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="skill">
+            <div class="skill-head">
+              <span class="skill-name">/synthesis</span>
+              <span class="pill">Count</span>
+            </div>
+            <p>
+              Groups raw research responses into themes and makes every count
+              carry the quotes behind it. No figure that is not in the data, no
+              &ldquo;most participants&rdquo; standing in for a number, no quote
+              paraphrased into something stronger than it was, and every point
+              marked as observed or inferred.
+            </p>
+            <p class="what">
+              Changes what a finding has to prove: the evidence travels with
+              the count, so a number you cannot check never reaches the deck.
+            </p>
+            <div class="cmd">
+              <pre id="cmd-synth"><span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/synthesis .claude/skills/synthesis</pre>
+              <button class="copy" type="button" data-copy="cmd-synth">
                 <span class="copy-text">Copy</span>
               </button>
             </div>

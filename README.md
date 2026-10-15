@@ -8,6 +8,7 @@ designs a thing and then ships its front end.
 | [`list-it`](.agents/skills/list-it/SKILL.md) | Collect a numbered list of changes without executing any of them, until you say go. For dictating changes faster than you want them done. |
 | [`mock-it`](.agents/skills/mock-it/SKILL.md) | Render 2–4 labelled design variants inline in the chat, in the project's real tokens, then ask which direction to take. |
 | [`explore`](.agents/skills/explore/SKILL.md) | An idea lane that runs alongside a `/list-it` list. Produces options and trade-offs; nothing is built or listed until you say so. |
+| [`synthesis`](.agents/skills/synthesis/SKILL.md) | Group raw research responses into themes where every count carries the quotes behind it, every point is marked observed or inferred, and no figure appears that is not in the data. |
 
 One more, kept here as a worked example rather than as something to install:
 
@@ -21,7 +22,8 @@ what the project-specific kind of skill looks like, which is the kind most
 worth writing and the hardest to picture from a generic example.
 
 Each is invoked two ways: automatically, when what you are doing matches the
-skill's `description`, or by hand as `/list-it`, `/mock-it`, `/explore`.
+skill's `description`, or by hand as `/list-it`, `/mock-it`, `/explore`,
+`/synthesis`.
 
 ## Installing them in a repo
 
@@ -29,7 +31,7 @@ Copy the skills in and symlink them:
 
 ```bash
 mkdir -p .agents/skills .claude/skills
-for s in list-it mock-it explore; do
+for s in list-it mock-it explore synthesis; do
   cp -r /path/to/design-skills/.agents/skills/$s .agents/skills/$s
   ln -sfn ../../.agents/skills/$s .claude/skills/$s
 done
