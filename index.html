@@ -234,6 +234,12 @@
       .skill:last-of-type {
         border-bottom: 1px solid var(--border);
       }
+      /* .example opens with a rule of its own, so the list above it must not
+         close with one too: two rules with the section gap between them read
+         as an empty band rather than a break. */
+      .skill:last-of-type:has(~ .example) {
+        border-bottom: 0;
+      }
       .skill-head {
         display: flex;
         align-items: center;
@@ -291,7 +297,9 @@
       .example {
         border-top: 1px solid var(--border);
         padding-top: clamp(2rem, 5vh, 3rem);
-        margin-top: clamp(2rem, 5vh, 3rem);
+        /* The card above already ends in its own padding; a full gap on top
+           of that puts twice as much air above the rule as below it. */
+        margin-top: clamp(0.75rem, 2vh, 1.25rem);
       }
       .example > p:first-child {
         margin: 0 0 1.75rem;
@@ -447,10 +455,9 @@
             <p>Run it in your project root</p>
           </div>
           <div class="cmd">
-            <pre id="cmd-all"><span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/list-it .claude/skills/list-it &amp;&amp;
-<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/mock-it .claude/skills/mock-it &amp;&amp;
-<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/explore .claude/skills/explore &amp;&amp;
-<span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/synthesis .claude/skills/synthesis</pre>
+            <pre id="cmd-all"><span class="tok">for</span> s <span class="tok">in</span> list-it mock-it explore synthesis; <span class="tok">do</span>
+  <span class="tok">npx</span> -y degit toubashahzad/design-skills/.agents/skills/$s .claude/skills/$s
+<span class="tok">done</span></pre>
             <button class="copy" type="button" data-copy="cmd-all">
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <rect
