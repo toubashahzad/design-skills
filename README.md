@@ -8,7 +8,7 @@ designs a thing and then ships its front end.
 | [`list-it`](.agents/skills/list-it/SKILL.md) | Collect a numbered list of changes without executing any of them, until you say go. For dictating changes faster than you want them done. |
 | [`mock-it`](.agents/skills/mock-it/SKILL.md) | Render 2–4 labelled design variants inline in the chat, in the project's real tokens, then ask which direction to take. |
 | [`explore`](.agents/skills/explore/SKILL.md) | An idea lane that runs alongside a `/list-it` list. Produces options and trade-offs; nothing is built or listed until you say so. |
-| [`synthesis`](.agents/skills/synthesis/SKILL.md) | Group raw research responses into themes where every count carries the quotes behind it, every point is marked observed or inferred, and no figure appears that is not in the data. |
+| [`synthesis`](.agents/skills/synthesis/SKILL.md) | Group raw research responses into themes where every count carries the quotes behind it, every point is marked observed or inferred, and no figure appears that is not in the data. Ends by writing the findings to a dated file. |
 
 One more, kept here as a worked example rather than as something to install:
 

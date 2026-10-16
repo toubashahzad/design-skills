@@ -1,6 +1,6 @@
 ---
 name: synthesis
-description: Group raw qualitative research responses into themes with every count traceable to the evidence behind it. Use when the user invokes /synthesis or pastes interview transcripts, survey answers, usability session notes or open-text responses and asks what the patterns are, what people said, or to summarise findings. Never invent, estimate or round a figure; label every point Observed or Interpreted; the human owns the judgement, this only speeds up the grouping.
+description: Group raw qualitative research responses into themes with every count traceable to the evidence behind it. Use when the user invokes /synthesis or pastes interview transcripts, survey answers, usability session notes or open-text responses and asks what the patterns are, what people said, or to summarise findings. Never invent, estimate or round a figure; label every point Observed or Interpreted; the human owns the judgement, this only speeds up the grouping. Ends by writing the findings to a markdown file.
 ---
 
 # synthesis — group the responses, never inflate them
@@ -78,6 +78,37 @@ Close with:
 
 - **Didn't fit a theme** — the responses, verbatim, not summarised
 - **Limitations** — sample, method, and the gaps
+
+## The document
+
+Every run ends by writing the findings to a markdown file. The file is the
+deliverable; the chat reply is short — the headline finding and the path.
+
+**Where.** Beside the source data, when it came from a path you were given.
+Otherwise `research/` in the project root, created if missing. Give the full
+path in the reply.
+
+**Name.** `synthesis-<topic>-YYYY-MM-DD.md`, the topic slugged from what the
+study was about. If that name is taken, append `-2`, `-3`. Never overwrite an
+earlier synthesis: a second pass over the same data is a new document, and
+the difference between the two is itself a finding.
+
+**What goes in it**, in this order:
+
+1. **Title, date, and the sources by name** — the files, transcripts or
+   pasted text the analysis read, so a reader can go back to them.
+2. **What the data is**, in one line: N, and the method. If it is not
+   qualitative responses — a spec, a metrics summary, a deck — say so here,
+   at the top, ahead of any finding. Whoever opens this file later was not in
+   the conversation where you said it.
+3. **The findings**, one block each, in the table above.
+4. **Didn't fit a theme**, verbatim.
+5. **Limitations.**
+
+**Nothing enters the document that was not in the analysis.** Writing the
+file is transcription, not a second pass: no claim, count or quote appears
+there that you did not show and support first. What was labelled Interpreted
+in the conversation is labelled Interpreted in the file.
 
 ---
 
