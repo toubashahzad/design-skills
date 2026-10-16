@@ -1,0 +1,41 @@
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; never cancel one that is mid-flight.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # enablement: true switches the site's source to this workflow if it is
+      # not already, so the deploy below does not depend on a repository
+      # setting having been saved by hand.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      # The repository root is the site: index.html sits at the top level and
+      # every other link points at github.com, not at a local file.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
